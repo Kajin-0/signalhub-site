@@ -46,6 +46,10 @@
           "required": ["type", "name"]
         },
         "pain_category": { "type": "string" },
+            "references": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
         "severity": { "type": "number", "minimum": 0, "maximum": 10 },
         "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
         "signals": {
