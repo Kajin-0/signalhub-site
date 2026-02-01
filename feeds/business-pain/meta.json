@@ -1,0 +1,20 @@
+{
+  "feed_id": "business-pain",
+  "title": "Business Pain Signals",
+  "description": "Aggregated signals of operational pain across companies. This feed highlights areas where organisations experience scaling bottlenecks, technical debt, regulatory pressure or other blockers that present opportunities for service providers.",
+  "feed_version": "1.0.0",
+  "cadence": "daily",
+  "confidence_method": "multi-source corroboration",
+  "created_at": "2026-02-01T00:00:00Z",
+  "fields": {
+    "entity": "Object describing the subject of the pain (e.g. company, project or department)",
+    "pain_category": "High-level category of the pain (scaling, cost, compliance, reliability, etc.)",
+    "severity": "Numeric score between 0 and 10 indicating relative severity",
+    "confidence": "Probability (0-1) that this signal truly reflects the described pain",
+    "signals": "List of short phrases summarising evidence of pain",
+    "first_seen": "Date when the pain signal first surfaced",
+    "last_confirmed": "Date when the pain signal was last observed",
+    "actionability.urgency_days": "Recommended number of days before this issue should be addressed",
+    "actionability.budget_estimate_usd": "Two-element array with low and high budget estimates in USD"
+  }
+}
