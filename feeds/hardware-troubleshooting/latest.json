@@ -1,0 +1,34 @@
+{
+  "feed_id": "hardware-troubleshooting",
+  "feed_version": "1.0.0",
+  "generated_at": "2026-02-01T14:00:00Z",
+  "cadence": "daily",
+  "confidence_method": "crowd-sourced corroboration",
+  "items": [
+    {
+      "entity": {
+        "type": "device",
+        "name": "Acme Laptop Pro 15",
+        "vendor": "Acme Corp"
+      },
+      "issue": "Overheating under light load",
+      "severity": 6,
+      "confidence": 0.75,
+      "references": [
+        "https://example.com/forum/acme-laptop-overheat-thread",
+        "https://www.youtube.com/watch?v=abc123&t=120"
+      ],
+      "proposed_fixes": [
+        "Clean the fans to remove dust buildup",
+        "Update BIOS firmware to the latest version",
+        "Undervolt the CPU using available software"
+      ],
+      "first_seen": "2026-01-20",
+      "last_confirmed": "2026-02-01",
+      "actionability": {
+        "urgency_days": 14,
+        "cost_estimate_usd": [0, 30]
+      }
+    }
+  ]
+}
