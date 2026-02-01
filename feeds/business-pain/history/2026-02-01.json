@@ -1,7 +1,7 @@
 {
   "feed_id": "business-pain",
   "feed_version": "1.0.0",
-  "generated_at": "2026-02-01T00:00:00Z",
+  "generated_at": "2026-02-01T08:00:00Z",
   "cadence": "daily",
   "confidence_method": "multi-source corroboration",
   "items": [
@@ -14,6 +14,7 @@
       "pain_category": "scaling",
       "severity": 8.2,
       "confidence": 0.82,
+      "references": [],
       "signals": [
         "Hiring surge for firmware engineers",
         "Persistent unresolved GitHub issues",
