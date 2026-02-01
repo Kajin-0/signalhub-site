@@ -1,0 +1,11 @@
+{
+  "feeds": [
+    {
+      "feed_id": "business-pain",
+      "title": "Business Pain Signals",
+      "description": "Aggregated signals of operational pain across companies.",
+      "cadence": "daily",
+      "version": "1.0.0"
+    }
+  ]
+}
