@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hardware Troubleshooting Feed Schema",
+  "type": "object",
+  "properties": {
+    "feed_id": {
+      "type": "string",
+      "const": "hardware-troubleshooting"
+    },
+    "feed_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cadence": {
+      "type": "string"
+    },
+    "confidence_method": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/HardwareTroubleshootingItem"
+      }
+    }
+  },
+  "required": [
+    "feed_id",
+    "feed_version",
+    "generated_at",
+    "cadence",
+    "items"
+  ],
+  "definitions": {
+    "Entity": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Kind of entity, e.g., 'device', 'model', or 'component'."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name or model number of the device or component."
+        },
+        "vendor": {
+          "type": "string",
+          "description": "Manufacturer or vendor of the device."
+        }
+      },
+      "required": ["type", "name"]
+    },
+    "Actionability": {
+      "type": "object",
+      "properties": {
+        "urgency_days": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Suggested days to address the issue."
+        },
+        "cost_estimate_usd": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "Estimated minimum and maximum cost in USD."
+        }
+      }
+    },
+    "HardwareTroubleshootingItem": {
+      "type": "object",
+      "properties": {
+        "entity": { "$ref": "#/definitions/Entity" },
+        "issue": {
+          "type": "string",
+          "description": "Short description of the hardware problem."
+        },
+        "severity": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Severity of the issue (0-10)."
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in the accuracy of the issue and fixes."
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "List of URLs or citations supporting the issue and fixes."
+        },
+        "proposed_fixes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Proposed fixes or steps to resolve the issue."
+        },
+        "first_seen": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when issue first observed."
+        },
+        "last_confirmed": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when issue last confirmed."
+        },
+        "actionability": { "$ref": "#/definitions/Actionability" }
+      },
+      "required": ["entity", "issue", "severity", "confidence"]
+    }
+  }
+}
