@@ -14,6 +14,7 @@
     "signals": "List of short phrases summarising evidence of pain",
     "first_seen": "Date when the pain signal first surfaced",
     "last_confirmed": "Date when the pain signal was last observed",
+      "references": "List of source URLs or citations for the pain signals",
     "actionability.urgency_days": "Recommended number of days before this issue should be addressed",
     "actionability.budget_estimate_usd": "Two-element array with low and high budget estimates in USD"
   }
