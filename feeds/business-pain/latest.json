@@ -1,0 +1,30 @@
+{
+  "feed_id": "business-pain",
+  "feed_version": "1.0.0",
+  "generated_at": "2026-02-01T00:00:00Z",
+  "cadence": "daily",
+  "confidence_method": "multi-source corroboration",
+  "items": [
+    {
+      "entity": {
+        "type": "company",
+        "name": "Acme Robotics",
+        "domain": "acmerobotics.example"
+      },
+      "pain_category": "scaling",
+      "severity": 8.2,
+      "confidence": 0.82,
+      "signals": [
+        "Hiring surge for firmware engineers",
+        "Persistent unresolved GitHub issues",
+        "Frequent outage complaints on forums"
+      ],
+      "first_seen": "2026-01-12",
+      "last_confirmed": "2026-02-01",
+      "actionability": {
+        "urgency_days": 30,
+        "budget_estimate_usd": [5000, 25000]
+      }
+    }
+  ]
+}
