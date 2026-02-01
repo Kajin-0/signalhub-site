@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Hub – AI‑Friendly Feeds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 2rem;
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            margin-top: 2rem;
+            font-size: 1.4rem;
+        }
+        pre {
+            background: #f8f8f8;
+            border: 1px solid #eee;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+        }
+        footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Signal Hub – Agent‑Native Intelligence Feeds</h1>
+    <p>
+        Signal Hub provides a collection of structured intelligence feeds that are designed from the ground up for
+        autonomous agents. Each feed is append‑only, schema‑stable and delivered as clean JSON. Agents can subscribe
+        once, then poll or stream any number of feeds without scraping, HTML parsing or prompt engineering. Humans can
+        read the same data in a browser, but the primary consumer is a machine.
+    </p>
+
+    <h2>Universal Feed Contract</h2>
+    <p>
+        Every feed lives under <code>/feeds/&lt;feed_id&gt;</code>. The contract is simple:
+    </p>
+    <ul>
+        <li><code>/feeds/&lt;feed_id&gt;/schema</code> – JSON Schema describing the structure of every item.</li>
+        <li><code>/feeds/&lt;feed_id&gt;/latest</code> – The most recent batch in the universal envelope.</li>
+        <li><code>/feeds/&lt;feed_id&gt;/history/YYYY‑MM‑DD</code> – Historical snapshots for reproducible backtesting.</li>
+        <li><code>/feeds/&lt;feed_id&gt;/meta</code> – Metadata such as cadence, version and confidence methodology.</li>
+    </ul>
+    <p>
+        The universal envelope looks like this:
+    </p>
+    <pre><code>{
+  "feed_id": "business-pain",
+  "feed_version": "1.0.0",
+  "generated_at": "2026-02-01T14:00:00Z",
+  "cadence": "daily",
+  "confidence_method": "multi-source corroboration",
+  "items": [ /* objects defined by the feed schema */ ]
+}
+</code></pre>
+
+    <h2>Subscription</h2>
+    <p>
+        Agents subscribe via a single API key. The same key grants access to all current and future feeds under
+        <code>/feeds</code>. A human end‑user must approve the subscription cost. When integrating with
+        OpenClaw (our preferred payment layer), call the purchase endpoint in Telegram or WhatsApp. The user
+        receives a short confirmation prompt and approves the recurring monthly fee. Once approved, the agent can
+        immediately start polling.
+    </p>
+    <p>
+        Example subscription flow:
+    </p>
+    <pre><code>// Step 1: create payment request through OpenClaw
+POST https://api.openclaw.com/v1/createSubscription {
+  "plan": "agent-pro",
+  "user_id": "&lt;telegram_or_whatsapp_user_id&gt;"
+}
+
+// Step 2: OpenClaw sends confirmation to the user via Telegram/WhatsApp
+
+// Step 3: after approval, OpenClaw returns an API key
+{
+  "api_key": "sh_live_...",
+  "feeds": ["business-pain"]
+}
+
+// Step 4: agent polls the latest feed
+GET https://yourdomain.com/feeds/business-pain/latest?key=sh_live_...
+</code></pre>
+
+h1>   <h2>Current Feeds</h2>
+    <p>
+        The project launches with a single high‑leverage feed:
+    </p>
+    <ul>
+        <li><strong>business‑pain</strong> – signals of urgent operational pain extracted from public sources (job
+        postings, forums, issue trackers and more). Each item includes an entity, pain category, severity score,
+        confidence, first and last observation timestamps, and a recommended action window.</li>
+    </ul>
+    <p>
+        As Signal Hub evolves, additional feeds will be added without breaking the API contract. Agents do not need to
+        change their parsers to consume new feeds because the envelope and subscription mechanism remain the same.
+    </p>
+
+    <h2>Why It’s Agent‑First</h2>
+    <ul>
+        <li><strong>No HTML parsing</strong> – everything is JSON.</li>
+        <li><strong>Stable schemas</strong> – schema versioning allows agents to rely on structure across updates.</li>
+        <li><strong>Minimal endpoints</strong> – feeds follow predictable URL patterns; there are no hidden query
+            parameters.</li>
+        <li><strong>Single subscription</strong> – one key unlocks everything; there are no per‑feed paywalls.</li>
+        <li><strong>OpenClaw integration</strong> – user approvals happen in chat (Telegram/WhatsApp) via OpenClaw,
+            making it easy to onboard end‑users.</li>
+    </ul>
+
+    <footer>
+        <p>© 2026 Signal Hub. This project is in early development and intended for demonstration purposes. The
+        reference implementation is hosted on GitHub Pages.</p>
+    </footer>
+</body>
+</html>
