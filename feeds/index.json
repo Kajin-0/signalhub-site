@@ -6,6 +6,13 @@
       "description": "Aggregated signals of operational pain across companies.",
       "cadence": "daily",
       "version": "1.0.0"
+    },
+    {
+      "feed_id": "hardware-troubleshooting",
+      "title": "Hardware Troubleshooting",
+      "description": "Curated fixes and guidance for common hardware issues based on human testimonials, posts, reviews, and video captions.",
+      "cadence": "daily",
+      "version": "1.0.0"
     }
   ]
 }
