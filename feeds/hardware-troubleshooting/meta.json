@@ -1,0 +1,20 @@
+{
+  "feed_id": "hardware-troubleshooting",
+  "title": "Hardware Troubleshooting",
+  "description": "Curated fixes and guidance for common hardware issues based on human testimonials, posts, reviews, and video captions.",
+  "version": "1.0.0",
+  "cadence": "daily",
+  "confidence_method": "crowd-sourced corroboration",
+  "created_at": "2026-02-01T00:00:00Z",
+  "fields": {
+    "entity": "An object describing the device or component experiencing the issue.",
+    "issue": "Short summary of the hardware problem.",
+    "severity": "Severity rating from 0 to 10 indicating how serious the issue is.",
+    "confidence": "Confidence level (0–1) that the issue and proposed fixes are accurate.",
+    "references": "List of URLs or citations where the issue and fixes are discussed.",
+    "proposed_fixes": "List of proposed fixes or steps to resolve the issue.",
+    "first_seen": "Date when the issue was first observed.",
+    "last_confirmed": "Date when the issue was last confirmed.",
+    "actionability": "Object containing urgency and cost estimate to address the issue."
+  }
+}
