@@ -5,8 +5,10 @@
   "version": "1.0.0",
   "cadence": "daily",
   "confidence_method": "crowd-sourced corroboration",
+    "tags": ["hardware", "troubleshooting", "laptop", "device", "fix"],
   "created_at": "2026-02-01T00:00:00Z",
   "fields": {
+    
     "entity": "An object describing the device or component experiencing the issue.",
     "issue": "Short summary of the hardware problem.",
     "severity": "Severity rating from 0 to 10 indicating how serious the issue is.",
