@@ -1,0 +1,3 @@
+Contact: mailto:security@signalhub.dev
+Expires: 2027-02-01T00:00:00Z
+Preferred-Languages: en
