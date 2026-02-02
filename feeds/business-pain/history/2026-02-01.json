@@ -3,7 +3,9 @@
   "feed_version": "1.0.0",
   "generated_at": "2026-02-01T08:00:00Z",
   "cadence": "daily",
-  "confidence_method": "multi-source corroboration",
+  "confidence_method": "multi-source corroborat
+    "content_hash": "b91d1b323f2becea9c3bc2740c85e7ccca2f9c7aca83616c3855a1dc11355c3e",
+ion",
   "items": [
     {
       "entity": {
