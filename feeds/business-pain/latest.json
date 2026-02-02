@@ -1,10 +1,10 @@
 {
   "feed_id": "business-pain",
-  "feed_version": "1.0.0",
+  "feed_version": "2.0.0",
   "generated_at": "2026-02-02T00:00:00Z",
   "cadence": "daily",
   "confidence_method": "multi-source corroboration",
-  "content_hash": "195d2b52157db9a55bd1c8b9f976193c6ae1c39055122b6da80f0dbcccb1538f",
+  "content_hash": "cbfb23ef91ffceda25a442e89919ed11c0d0ad32da32d1b360840b0630bf0871",
   "items": [
     {
       "entity": {
@@ -13,20 +13,55 @@
         "domain": "microsoft.com"
       },
       "pain_category": "outage",
-      "severity": 8.5,
-      "confidence": 0.82,
-      "references": ["https://www.theregister.com/2026/01/24/microsoft_365_outage_january_2026/"],
+      "severity": 9.0,
+      "confidence": 0.85,
       "signals": [
-        "Outlook, Defender, and Purview down for ~10 hours",
-        "Over 15,000 outage reports at peak",
-        "Customers reported missing emails during financial operations"
+        "Widespread Microsoft 365 outage",
+        "15,000 user reports at peak",
+        "Outlook, Defender, Purview downed"
       ],
       "first_seen": "2026-01-23",
       "last_confirmed": "2026-01-23",
       "actionability": {
-        "urgency_days": 7,
-        "budget_estimate_usd": [5000, 20000]
-      }
+        "urgency_days": 1,
+        "budget_estimate_usd": [0, 50000]
+      },
+      "impact": {
+        "revenue": "high",
+        "customers": "high",
+        "operations": "high",
+        "compliance": "unknown"
+      },
+      "relevant_roles": [
+        "CTO",
+        "VP Engineering",
+        "IT Operations"
+      ],
+      "time_sensitivity": {
+        "status": "resolved",
+        "expires_after_days": 30
+      },
+      "evidence": [
+        {
+          "type": "news",
+          "url": "https://www.theregister.com/2026/01/23/microsoft_365_outage/",
+          "confidence_weight": 0.8
+        },
+        {
+          "type": "user_reports",
+          "url": "https://downdetector.com",
+          "confidence_weight": 0.6
+        }
+      ],
+      "corroboration": {
+        "independent_sources": 2,
+        "source_types": ["news", "user_reports"]
+      },
+      "suggested_actions": [
+        "Monitor Microsoft 365 service status",
+        "Notify customers about potential delays",
+        "Consider backup email provider"
+      ]
     },
     {
       "entity": {
@@ -35,20 +70,55 @@
         "domain": "verizon.com"
       },
       "pain_category": "network outage",
-      "severity": 9.1,
-      "confidence": 0.85,
-      "references": ["https://broadbandbreakfast.com/2026/01/verizon-outage-fcc-investigation/"],
+      "severity": 8.5,
+      "confidence": 0.8,
       "signals": [
-        ">2.3 million user reports of service disruption",
-        "Outage caused by software issue",
-        "FCC investigating and $20 credit offered"
+        "Major network outage due to software issue",
+        "Downdetector received over 2.3 million reports",
+        "FCC investigating"
       ],
       "first_seen": "2026-01-14",
       "last_confirmed": "2026-01-14",
       "actionability": {
-        "urgency_days": 5,
-        "budget_estimate_usd": [10000, 30000]
-      }
+        "urgency_days": 2,
+        "budget_estimate_usd": [0, 20000]
+      },
+      "impact": {
+        "revenue": "medium",
+        "customers": "high",
+        "operations": "medium",
+        "compliance": "low"
+      },
+      "relevant_roles": [
+        "CTO",
+        "Network Operations",
+        "Risk Management"
+      ],
+      "time_sensitivity": {
+        "status": "resolved",
+        "expires_after_days": 30
+      },
+      "evidence": [
+        {
+          "type": "news",
+          "url": "https://broadbandbreakfast.com/verizon-says-major-outage-caused-by-software-issue/",
+          "confidence_weight": 0.8
+        },
+        {
+          "type": "user_reports",
+          "url": "https://downdetector.com",
+          "confidence_weight": 0.7
+        }
+      ],
+      "corroboration": {
+        "independent_sources": 2,
+        "source_types": ["news", "user_reports"]
+      },
+      "suggested_actions": [
+        "Review redundancy and failover plans",
+        "Issue credits to affected customers",
+        "Communicate with regulators"
+      ]
     },
     {
       "entity": {
@@ -57,20 +127,49 @@
         "domain": "microsoft.com"
       },
       "pain_category": "update bug",
-      "severity": 7.3,
-      "confidence": 0.78,
-      "references": ["https://gulfnews.com/world/asia/microsoft-windows-11-update-causes-shutdown-failures-1.93179840"],
+      "severity": 7.5,
+      "confidence": 0.75,
       "signals": [
-        "January 13, 2026 Windows 11 update causes shutdown/hibernate failures",
-        "23H2 Enterprise and IoT devices affected",
-        "Remote connection failures reported"
+        "Windows 11 update causes shutdown and hibernation failures",
+        "Affects devices with Secure Launch enabled",
+        "Temporary workaround available"
       ],
       "first_seen": "2026-01-13",
       "last_confirmed": "2026-01-17",
       "actionability": {
-        "urgency_days": 10,
-        "budget_estimate_usd": [2000, 10000]
-      }
+        "urgency_days": 5,
+        "budget_estimate_usd": [0, 10000]
+      },
+      "impact": {
+        "revenue": "low",
+        "customers": "medium",
+        "operations": "medium",
+        "compliance": "low"
+      },
+      "relevant_roles": [
+        "IT Operations",
+        "Endpoint Management"
+      ],
+      "time_sensitivity": {
+        "status": "resolved",
+        "expires_after_days": 60
+      },
+      "evidence": [
+        {
+          "type": "news",
+          "url": "https://www.bleepingcomputer.com/news/security/microsoft-some-windows-pcs-fail-to-shut-down-after-january-update/",
+          "confidence_weight": 0.7
+        }
+      ],
+      "corroboration": {
+        "independent_sources": 1,
+        "source_types": ["news"]
+      },
+      "suggested_actions": [
+        "Apply out-of-band patches from Microsoft",
+        "Advise users to shut down via command line",
+        "Monitor for updated guidance"
+      ]
     }
   ]
 }

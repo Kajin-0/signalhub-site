@@ -1,12 +1,6 @@
 {
-  "snapshots": [
-    {
-      "file": "history/2026-02-01.json",
-      "content_hash": "0b27d66ea2fcaa90ec4280cb499908d57709724e628f9f9ef576627f6ce18d03"
-    },
-    {
-      "file": "latest.json",
-      "content_hash": "195d2b52157db9a55bd1c8b9f976193c6ae1c39055122b6da80f0dbcccb1538f"
-    }
-  ]
+  "snapshots": {
+    "latest.json": "cbfb23ef91ffceda25a442e89919ed11c0d0ad32da32d1b360840b0630bf0871",
+    "history/2026-02-01.json": "35f601ef90d5abdec103544a07370a24662cea42b3565bb1dcb4a909df22143f"
+  }
 }

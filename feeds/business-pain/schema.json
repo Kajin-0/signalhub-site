@@ -22,7 +22,7 @@
     },
     "confidence_method": {
       "type": "string",
-      "description": "Free-form description of how confidence scores are derived."
+      "description": "Free‑form description of how confidence scores are derived."
     },
     "items": {
       "type": "array",
@@ -46,10 +46,6 @@
           "required": ["type", "name"]
         },
         "pain_category": { "type": "string" },
-            "references": {
-          "type": "array",
-          "items": { "type": "string" }
-        },
         "severity": { "type": "number", "minimum": 0, "maximum": 10 },
         "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
         "signals": {
@@ -70,9 +66,91 @@
             }
           },
           "required": ["urgency_days", "budget_estimate_usd"]
+        },
+
+        /* New fields for richer business pain semantics */
+        "impact": {
+          "type": "object",
+          "properties": {
+            "revenue": {
+              "type": "string",
+              "enum": ["high", "medium", "low", "unknown"]
+            },
+            "customers": {
+              "type": "string",
+              "enum": ["high", "medium", "low", "unknown"]
+            },
+            "operations": {
+              "type": "string",
+              "enum": ["high", "medium", "low", "unknown"]
+            },
+            "compliance": {
+              "type": "string",
+              "enum": ["high", "medium", "low", "none"]
+            }
+          },
+          "required": ["revenue", "customers", "operations", "compliance"]
+        },
+        "relevant_roles": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "time_sensitivity": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["ongoing", "resolved", "intermittent"]
+            },
+            "expires_after_days": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": ["status", "expires_after_days"]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string" },
+              "url": { "type": "string", "format": "uri" },
+              "confidence_weight": { "type": "number", "minimum": 0, "maximum": 1 }
+            },
+            "required": ["type", "url", "confidence_weight"]
+          }
+        },
+        "corroboration": {
+          "type": "object",
+          "properties": {
+            "independent_sources": { "type": "integer", "minimum": 0 },
+            "source_types": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "required": ["independent_sources", "source_types"]
+        },
+        "suggested_actions": {
+          "type": "array",
+          "items": { "type": "string" }
         }
       },
-      "required": ["entity", "pain_category", "severity", "confidence", "first_seen", "last_confirmed"]
+      "required": [
+        "entity",
+        "pain_category",
+        "severity",
+        "confidence",
+        "first_seen",
+        "last_confirmed",
+        "impact",
+        "relevant_roles",
+        "time_sensitivity",
+        "evidence",
+        "corroboration",
+        "suggested_actions"
+      ]
     }
   }
 }

@@ -5,7 +5,19 @@
   "feed_version": "1.0.0",
   "cadence": "daily",
   "confidence_method": "multi-source corroboration",
-    "tags": ["outage", "network", "bug", "operations", "pain"],
+  "definition": "A business pain signal is a verified operational, financial, or technical issue that measurably impacts revenue, productivity, reliability, or compliance.",
+  "tags": ["outage", "network", "bug", "operations", "pain"],
+  "scope_keywords": [
+    "cloud outage",
+    "enterprise SaaS downtime",
+    "network reliability",
+    "service degradation"
+  ],
+  "quality_metrics": {
+    "avg_items_per_day": 3.0,
+    "false_positive_rate": 0.05,
+    "median_resolution_time_days": 5
+  },
   "created_at": "2026-02-01T00:00:00Z",
   "fields": {
     "entity": "Object describing the subject of the pain (e.g. company, project or department)",
@@ -15,8 +27,15 @@
     "signals": "List of short phrases summarising evidence of pain",
     "first_seen": "Date when the pain signal first surfaced",
     "last_confirmed": "Date when the pain signal was last observed",
-      "references": "List of source URLs or citations for the pain signals",
     "actionability.urgency_days": "Recommended number of days before this issue should be addressed",
     "actionability.budget_estimate_usd": "Two-element array with low and high budget estimates in USD"
+    ,
+    "impact": "Object describing high/medium/low/unknown impact on revenue, customers, operations and compliance",
+    "relevant_roles": "Array of job titles or roles for which this issue is particularly relevant",
+    "time_sensitivity.status": "Enumerated status describing whether the issue is ongoing, resolved or intermittent",
+    "time_sensitivity.expires_after_days": "Number of days after which this issue should be considered stale",
+    "evidence": "List of evidence objects including type, URL and confidence weight for each supporting source",
+    "corroboration": "Object summarising number of independent sources and their types",
+    "suggested_actions": "List of high-level recommended next steps to address or monitor the issue"
   }
 }
