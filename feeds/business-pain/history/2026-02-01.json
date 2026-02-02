@@ -3,30 +3,73 @@
   "feed_version": "1.0.0",
   "generated_at": "2026-02-01T08:00:00Z",
   "cadence": "daily",
-  "confidence_method": "multi-source corroborat
-    "content_hash": "b91d1b323f2becea9c3bc2740c85e7ccca2f9c7aca83616c3855a1dc11355c3e",
-ion",
+  "confidence_method": "multi-source corroboration",
+  "content_hash": "0b27d66ea2fcaa90ec4280cb499908d57709724e628f9f9ef576627f6ce18d03",
   "items": [
     {
       "entity": {
         "type": "company",
-        "name": "Acme Robotics",
-        "domain": "acmerobotics.example"
+        "name": "Microsoft",
+        "domain": "microsoft.com"
       },
-      "pain_category": "scaling",
-      "severity": 8.2,
+      "pain_category": "outage",
+      "severity": 8.5,
       "confidence": 0.82,
-      "references": [],
+      "references": ["https://www.theregister.com/2026/01/24/microsoft_365_outage_january_2026/"],
       "signals": [
-        "Hiring surge for firmware engineers",
-        "Persistent unresolved GitHub issues",
-        "Frequent outage complaints on forums"
+        "Outlook, Defender, and Purview down for ~10 hours",
+        "Over 15,000 outage reports at peak",
+        "Customers reported missing emails during financial operations"
       ],
-      "first_seen": "2026-01-12",
-      "last_confirmed": "2026-02-01",
+      "first_seen": "2026-01-23",
+      "last_confirmed": "2026-01-23",
       "actionability": {
-        "urgency_days": 30,
-        "budget_estimate_usd": [5000, 25000]
+        "urgency_days": 7,
+        "budget_estimate_usd": [5000, 20000]
+      }
+    },
+    {
+      "entity": {
+        "type": "company",
+        "name": "Verizon",
+        "domain": "verizon.com"
+      },
+      "pain_category": "network outage",
+      "severity": 9.1,
+      "confidence": 0.85,
+      "references": ["https://broadbandbreakfast.com/2026/01/verizon-outage-fcc-investigation/"],
+      "signals": [
+        ">2.3 million user reports of service disruption",
+        "Outage caused by software issue",
+        "FCC investigating and $20 credit offered"
+      ],
+      "first_seen": "2026-01-14",
+      "last_confirmed": "2026-01-14",
+      "actionability": {
+        "urgency_days": 5,
+        "budget_estimate_usd": [10000, 30000]
+      }
+    },
+    {
+      "entity": {
+        "type": "company",
+        "name": "Microsoft",
+        "domain": "microsoft.com"
+      },
+      "pain_category": "update bug",
+      "severity": 7.3,
+      "confidence": 0.78,
+      "references": ["https://gulfnews.com/world/asia/microsoft-windows-11-update-causes-shutdown-failures-1.93179840"],
+      "signals": [
+        "January 13, 2026 Windows 11 update causes shutdown/hibernate failures",
+        "23H2 Enterprise and IoT devices affected",
+        "Remote connection failures reported"
+      ],
+      "first_seen": "2026-01-13",
+      "last_confirmed": "2026-01-17",
+      "actionability": {
+        "urgency_days": 10,
+        "budget_estimate_usd": [2000, 10000]
       }
     }
   ]
