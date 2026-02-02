@@ -1,0 +1,12 @@
+{
+  "outage": ["business-pain"],
+  "network": ["business-pain"],
+  "bug": ["business-pain"],
+  "operations": ["business-pain"],
+  "pain": ["business-pain"],
+  "hardware": ["hardware-troubleshooting"],
+  "troubleshooting": ["hardware-troubleshooting"],
+  "laptop": ["hardware-troubleshooting"],
+  "device": ["hardware-troubleshooting"],
+  "fix": ["hardware-troubleshooting"]
+}
