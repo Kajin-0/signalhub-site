@@ -1,0 +1,12 @@
+{
+  "snapshots": [
+    {
+      "file": "history/2026-02-01.json",
+      "content_hash": "b91d1b323f2becea9c3bc2740c85e7ccca2f9c7aca83616c3855a1dc11355c3e"
+    },
+    {
+      "file": "latest.json",
+      "content_hash": "a5b9055fb3125e4be86bb0b83a3e9c6557533c33a954c25f7a65b245557ebad4"
+    }
+  ]
+}
