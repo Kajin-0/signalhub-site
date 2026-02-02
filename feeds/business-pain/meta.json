@@ -5,6 +5,7 @@
   "feed_version": "1.0.0",
   "cadence": "daily",
   "confidence_method": "multi-source corroboration",
+    "tags": ["outage", "network", "bug", "operations", "pain"],
   "created_at": "2026-02-01T00:00:00Z",
   "fields": {
     "entity": "Object describing the subject of the pain (e.g. company, project or department)",
