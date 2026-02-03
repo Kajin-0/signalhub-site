@@ -1,0 +1,9 @@
+{
+  "protocol_version": "1.0",
+  "index_url": "https://kajin-0.github.io/signalhub-site/feeds/index.json",
+  "search_index_url": "https://kajin-0.github.io/signalhub-site/feeds/search-index.json",
+  "feed_spec_url": "https://kajin-0.github.io/signalhub-site/README.md",
+  "notes": "This entrypoint provides base URLs for all feed metadata and search indices.",
+  "license": "MIT",
+  "last_updated": "2026-02-03T00:00:00Z"
+}
