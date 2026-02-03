@@ -1,0 +1,124 @@
+{
+  "feed_id": "toolchain-breakage-patterns",
+  "feed_version": "1.0.0",
+  "generated_at": "2026-02-03T01:45:31Z",
+  "cadence": "quarterly",
+  "confidence_method": "manual review and external validation",
+  "items": [
+    {
+      "component": "gcc",
+      "breakage": "GCC 10 default -fno-common causing multiple-definition link errors when duplicate global variables exist",
+      "impact": {
+        "build": "high",
+        "runtime": "low",
+        "portability": "medium",
+        "compliance": "low"
+      },
+      "relevant_roles": [
+        "embedded systems engineers",
+        "firmware developers",
+        "C/C++ developers"
+      ],
+      "time_sensitivity": {
+        "status": "resolved",
+        "expires_after_days": 0
+      },
+      "evidence": [
+        {
+          "type": "news",
+          "url": "【2†L216-L224】【2†L225-L229】",
+          "confidence_weight": 0.7
+        }
+      ],
+      "corroboration": {
+        "independent_sources": 1,
+        "source_types": [
+          "news"
+        ]
+      },
+      "suggested_actions": [
+        "Remove duplicate global definitions or add 'extern' declarations",
+        "Compile with -fcommon to restore old behavior temporarily"
+      ],
+      "first_seen": "2026-01-01",
+      "last_confirmed": "2026-02-02"
+    },
+    {
+      "component": "cmake",
+      "breakage": "CMake 4.0 removes long-deprecated policies causing projects with older minimum version settings to fail",
+      "impact": {
+        "build": "high",
+        "runtime": "none",
+        "portability": "medium",
+        "compliance": "low"
+      },
+      "relevant_roles": [
+        "build engineers",
+        "DevOps",
+        "CI maintainers"
+      ],
+      "time_sensitivity": {
+        "status": "ongoing",
+        "expires_after_days": 180
+      },
+      "evidence": [
+        {
+          "type": "community-discussion",
+          "url": "【15†L19-L27】【15†L43-L50】",
+          "confidence_weight": 0.6
+        }
+      ],
+      "corroboration": {
+        "independent_sources": 1,
+        "source_types": [
+          "community-discussion"
+        ]
+      },
+      "suggested_actions": [
+        "Set cmake_minimum_required to 3.20 or greater and update policies",
+        "Pin CMake version on CI to a compatible release"
+      ],
+      "first_seen": "2025-12-01",
+      "last_confirmed": "2026-02-02"
+    },
+    {
+      "component": "pip",
+      "breakage": "Pip 20.3+ introduces a strict dependency resolver, causing previously silent conflicts to surface as ResolutionImpossible errors",
+      "impact": {
+        "build": "medium",
+        "runtime": "none",
+        "portability": "low",
+        "compliance": "low"
+      },
+      "relevant_roles": [
+        "Python developers",
+        "DevOps",
+        "package maintainers"
+      ],
+      "time_sensitivity": {
+        "status": "ongoing",
+        "expires_after_days": 365
+      },
+      "evidence": [
+        {
+          "type": "blog",
+          "url": "【9†L201-L208】【9†L198-L205】",
+          "confidence_weight": 0.6
+        }
+      ],
+      "corroboration": {
+        "independent_sources": 1,
+        "source_types": [
+          "blog"
+        ]
+      },
+      "suggested_actions": [
+        "Add explicit compatible version constraints in requirements.txt",
+        "Use pip check or pipdeptree to find conflicting dependencies"
+      ],
+      "first_seen": "2020-11-15",
+      "last_confirmed": "2026-02-02"
+    }
+  ],
+  "content_hash": "36ffc24e692998e98d247161cb34b877fafc6bf3345027cd53b661e877cc247b"
+}
