@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Business Pain Signals Feed</title>
+  <link>https://kajin-0.github.io/signalhub-site/feeds/business-pain/latest.json</link>
+  <description>Latest business pain signals across operations, outages, and update issues.</description>
+  <lastBuildDate>2026-02-02T00:00:00Z</lastBuildDate>
+  <item>
+    <title>Microsoft 365 outage causes widespread disruption</title>
+    <description>Widespread Microsoft 365 outage caused by service problems leading to 15,000 user reports and extended downtime across Outlook, Defender, and Purview services. High severity.</description>
+    <link>https://kajin-0.github.io/signalhub-site/feeds/business-pain/latest.json</link>
+    <guid>microsoft-365-outage-2026-01-23</guid>
+    <pubDate>2026-01-23</pubDate>
+  </item>
+  <item>
+    <title>Verizon software issue triggers major network outage</title>
+    <description>Major network outage due to a software issue at Verizon triggered over 2.3 million user reports and prompted FCC investigation. Medium revenue impact, high customer impact.</description>
+    <link>https://kajin-0.github.io/signalhub-site/feeds/business-pain/latest.json</link>
+    <guid>verizon-network-outage-2026-01-14</guid>
+    <pubDate>2026-01-14</pubDate>
+  </item>
+  <item>
+    <title>Windows 11 security update causes shutdown and hibernation failures</title>
+    <description>Windows 11 January 13 security update caused shutdown and hibernation failures on certain devices with Secure Launch enabled, requiring a follow-up fix. Medium severity.</description>
+    <link>https://kajin-0.github.io/signalhub-site/feeds/business-pain/latest.json</link>
+    <guid>windows-11-update-bug-2026-01-17</guid>
+    <pubDate>2026-01-17</pubDate>
+  </item>
+</channel>
+</rss>
