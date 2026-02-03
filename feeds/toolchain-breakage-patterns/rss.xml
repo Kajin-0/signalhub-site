@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>SignalHub: Toolchain Breakage Patterns</title>
+    <link>https://kajin-0.github.io/signalhub-site/feeds/toolchain-breakage-patterns/</link>
+    <description>Highlights of recurring breakages in compilers, build systems, and package managers.</description>
+    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>GCC 10 -fno-common breakage</title>
+      <description>Multiple-definition linker failures occur because GCC 10 changed the default to -fno-common. Duplicate global definitions trigger errors and require using -fcommon or fixing code.</description>
+      <link>https://kajin-0.github.io/signalhub-site/feeds/toolchain-breakage-patterns/latest.json</link>
+      <guid>gcc-fno-common</guid>
+      <pubDate>Tue, 03 Feb 2026 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>CMake 4.0 deprecated policies cause build failure</title>
+      <description>Projects that set cmake_minimum_required &lt; 3.5 break under CMake 4.0 due to removal of deprecated policies. Updating the project or using CMake 3.x resolves the issue.</description>
+      <link>https://kajin-0.github.io/signalhub-site/feeds/toolchain-breakage-patterns/latest.json</link>
+      <guid>cmake-4-policies</guid>
+      <pubDate>Tue, 03 Feb 2026 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Pip strict resolver conflicts</title>
+      <description>Pip 20.3 introduced a strict dependency resolver. Installation fails with ResolutionImpossible errors when conflicting version requirements exist. Specify compatible versions or upgrade/downgrade packages.</description>
+      <link>https://kajin-0.github.io/signalhub-site/feeds/toolchain-breakage-patterns/latest.json</link>
+      <guid>pip-strict-resolver</guid>
+      <pubDate>Tue, 03 Feb 2026 00:00:00 GMT</pubDate>
+    </item>
+
+  </channel>
+</rss>
