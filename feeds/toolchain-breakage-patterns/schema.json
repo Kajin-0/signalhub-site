@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Toolchain Breakage Patterns Feed",
+  "type": "object",
+  "required": [
+    "feed_id",
+    "feed_version",
+    "generated_at",
+    "cadence",
+    "confidence_method",
+    "items",
+    "content_hash"
+  ],
+  "properties": {
+    "feed_id": {
+      "type": "string"
+    },
+    "feed_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cadence": {
+      "type": "string"
+    },
+    "confidence_method": {
+      "type": "string"
+    },
+    "content_hash": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ToolchainBreakageItem"
+      }
+    }
+  },
+  "definitions": {
+    "Impact": {
+      "type": "object",
+      "properties": {
+        "build": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "none"
+          ]
+        },
+        "runtime": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "none"
+          ]
+        },
+        "portability": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "none"
+          ]
+        },
+        "compliance": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "none"
+          ]
+        }
+      },
+      "required": [
+        "build",
+        "runtime",
+        "portability",
+        "compliance"
+      ]
+    },
+    "Evidence": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "confidence_weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "type",
+        "url",
+        "confidence_weight"
+      ]
+    },
+    "ToolchainBreakageItem": {
+      "type": "object",
+      "required": [
+        "component",
+        "breakage",
+        "impact",
+        "relevant_roles",
+        "time_sensitivity",
+        "evidence",
+        "corroboration",
+        "suggested_actions",
+        "first_seen",
+        "last_confirmed"
+      ],
+      "properties": {
+        "component": {
+          "type": "string"
+        },
+        "breakage": {
+          "type": "string"
+        },
+        "impact": {
+          "$ref": "#/definitions/Impact"
+        },
+        "relevant_roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "time_sensitivity": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "expires_after_days": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "status",
+            "expires_after_days"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Evidence"
+          }
+        },
+        "corroboration": {
+          "type": "object",
+          "properties": {
+            "independent_sources": {
+              "type": "integer"
+            },
+            "source_types": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "independent_sources",
+            "source_types"
+          ]
+        },
+        "suggested_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "first_seen": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_confirmed": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  }
+}
