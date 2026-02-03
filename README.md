@@ -49,3 +49,19 @@ Adhering to the envelope and consistent versioning ensures your feed is agent‑
 ## License
 
 Specify your chosen license here (e.g., MIT).
+
+## Use Cases
+
+Here are a few examples illustrating how agents and users can benefit from Signal Hub feeds:
+
+1. **Debugging a build failure:** A local LLM agent running on a developer’s machine can fetch `feeds/toolchain-breakage-patterns/latest.json` and quickly identify common root causes for recent build errors, such as the GCC `-fno-common` change or CMake 4.0 policy removals, without scraping StackOverflow or forums.
+
+2. **Monitoring cloud outages:** An operations agent monitors `feeds/business-pain/latest.json` for new high‑severity outages. When Microsoft 365 experiences a prolonged disruption, the agent alerts the team with a concise summary and links to evidence sources.
+
+3. **Troubleshooting hardware:** A support bot queries `feeds/hardware-troubleshooting/latest.json` when a user’s laptop overheats, returning a ranked list of likely causes (dust buildup, outdated BIOS) and proposed fixes sourced from forum posts and reviews.
+
+Feeds can be polled on‑demand or subscribed to via RSS. For example, the RSS feed for the toolchain breakage patterns can be consumed at  
+`feeds/toolchain-breakage-patterns/rss.xml`.  
+Similarly, each feed directory exposes `rss.xml` alongside `latest.json` to provide lightweight change notifications.
+
+These examples show how Signal Hub serves as a low‑compute, high‑signal knowledge layer that agents can leverage to answer questions immediately or trigger follow‑up research when needed.
