@@ -1,0 +1,41 @@
+{
+  "feed_id": "toolchain-breakage-patterns",
+  "title": "Recurring Toolchain Breakage Patterns",
+  "description": "A curated feed of recurring failures in software compilers, linkers, build systems, and dependency managers, with impact vectors, evidence and suggested mitigations.",
+  "feed_version": "1.0.0",
+  "cadence": "quarterly",
+  "confidence_method": "manual review and external validation",
+  "created_at": "2026-02-02T00:00:00Z",
+  "definition": "A toolchain breakage signal is a recurring failure mode observed in compilers, linkers, build systems, or package managers that disrupts software development workflows.",
+  "tags": [
+    "software",
+    "toolchain",
+    "compilers",
+    "build",
+    "CI"
+  ],
+  "scope_keywords": [
+    "compiler crash",
+    "linker error",
+    "build fail",
+    "dependency conflict",
+    "package manager"
+  ],
+  "quality_metrics": {
+    "avg_items_per_quarter": 3,
+    "false_positive_rate": 0.1,
+    "median_resolution_time_days": 30
+  },
+  "fields": {
+    "component": "Name of the tool or subsystem where breakage occurs",
+    "breakage": "Description of the recurring failure pattern",
+    "impact": "Multi-dimensional impact classification on build, runtime, portability, compliance",
+    "relevant_roles": "Roles for which this breakage is relevant (e.g., developers, operations)",
+    "time_sensitivity": "Status of the breakage (ongoing/resolved) and suggested expiration period",
+    "evidence": "List of evidence sources referencing the breakage and their confidence weights",
+    "corroboration": "Number and types of independent sources confirming the issue",
+    "suggested_actions": "Recommended mitigations or workarounds",
+    "first_seen": "Date when the breakage was first reported",
+    "last_confirmed": "Most recent date the issue was verified"
+  }
+}
